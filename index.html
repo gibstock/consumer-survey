@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/css/style.css">
+  <title>Consumer Survey</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div class="container">
+      <h1>Consumer Survey</h1>
+      <form 
+        id="my-form"
+        action="https://script.google.com/macros/s/AKfycbyXsCLKTe3iZsM-Ip4TF4rODNur4w4yQ0QyeCt9bCyos82bISvjdst93UwxonCvFZHF/exec"
+        method="POST"
+      > 
+        <div class="input-group">
+          <input type="text" name="Name" placeholder="Name">
+        </div>
+        <div class="input-group section">
+          <input type="number" name="Q1" value="1" hidden>
+          <input type="text" name="Question1" value="Companies like Google and YouTube aim to be carbon free by 2030, on a scale of 1 - 5. Do you feel it's important for social media companies to have sustainability goals?" hidden>
+          <p>Companies like Google and YouTube aim to be carbon free by 2030, on a scale of 1 - 5. Do you feel it's important for social media companies to have sustainability goals? </p>
+          <div class="input-group radio">
+            <div class="radio-item">
+              <input type="radio" name="R1" value="1" required>
+              <label>1</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R1" value="2">
+              <label>2</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R1" value="3">
+              <label>3</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R1" value="4">
+              <label>4</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R1" value="5">
+              <label>5</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group section">
+          <input type="number" name="Q2" value="2" hidden>
+          <input type="text" name="Question2" value="On a scale of 1-5 how important is it to you for private companies to work with international, non government, organizations to develop social improvement programs?" hidden>
+          <p>On a scale of 1-5 how important is it to you for private companies to work with international, non government, organizations to develop social improvement programs?</p>
+          <div class="input-group radio">
+            <div class="radio-item">
+              <input type="radio" name="R2" value="1" required>
+              <label>1</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R2" value="2">
+              <label>2</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R2" value="3">
+              <label>3</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R2" value="4">
+              <label>4</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R2" value="5">
+              <label>5</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-group section">
+          <input type="number" name="Q3" value="3" hidden>
+          <input type="text" name="Question3" value="On a scale of 1-5, do you feel it's important for these companies to contribute to education in developing nations?" hidden>
+          <p>On a scale of 1-5, do you feel it's important for these companies to contribute to education in developing nations?</p>
+          <div class="input-group radio">
+            <div class="radio-item">
+              <input type="radio" name="R3" value="1" required>
+              <label>1</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R3" value="2">
+              <label>2</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R3" value="3">
+              <label>3</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R3" value="4">
+              <label>4</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R3" value="5">
+              <label>5</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-group section">
+          <input type="number" name="Q4" value="4" hidden>
+          <input type="text" name="Question4" value="Rank the following social programs on a scale of 1-5, with 1 being least important and 5 being the most important focus for a company’s social responsibility:" hidden>
+          <p>Rank the following social programs on a scale of 1-5, with 1 being least important and 5 being the most important focus for a company’s social responsibility:</p>
+          <div class="input-group slider">
+            <div class="slider-item">
+              <div id="slider1">1</div>
+              <input type="text" name="QA" value="Gender Equality: " hidden>
+              <input type="range" name="RA" value="1" required min="1" max="5" id="slider1Range">
+              <label>Gender Equality</label>
+            </div>
+            <div class="slider-item">
+              <div id="slider2">1</div>
+              <input type="text" name="QB" value="Sustainable cities and communities: " hidden>
+              <input type="range" name="RB" value="1" min="1" max="5" id="slider2Range">
+              <label>Sustainable cities and communities</label>
+            </div>
+            <div id="slider3">1</div>
+            <div class="slider-item">
+              <input type="text" name="QC" value="Advocating for Mental health: " hidden>
+              <input type="range" name="RC" value="1" min="1" max="5" id="slider3Range">
+              <label>Advocating for Mental health</label>
+            </div>
+            <div id="slider4">1</div>
+            <div class="slider-item">
+              <input type="text" name="QD" value="Racial Equality: " hidden>
+              <input type="range" name="RD" value="1" min="1" max="5" id="slider4Range">
+              <label>Racial Equality</label>
+            </div>
+            <div id="slider5">1</div>
+            <div class="slider-item">
+              <input type="text" name="QE" value="Global Warming: " hidden>
+              <input type="range" name="RE" value="1" min="1" max="5" id="slider5Range">
+              <label>Global Warming</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-group section">
+          <input type="number" name="Q5" value="5" hidden>
+          <input type="text" name="Question5" value="Do you consider the sustainability and environmental conservation programs of the social media services that you use?" hidden>
+          <p>Do you consider the sustainability and environmental conservation programs of the social media services that you use?</p>
+          <div class="input-group radio">
+            <div class="radio-item">
+              <input type="radio" name="R5" value="Yes" required>
+              <label>Yes</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R5" value="No">
+              <label>No</label>
+              </div>
+          </div>
+        </div>
+        <div class="input-group section">
+          <input type="number" name="Q6" value="6" hidden>
+          <input type="text" name="Question6" value="On a scale of 1-5 how important is it for these companies to have environmental overall goals while making them an accessible goal?" hidden>
+          <p>On a scale of 1-5 how important is it for these companies to have environmental overall goals while making them an accessible goal?</p>
+          <div class="input-group radio">
+            <div class="radio-item">
+              <input type="radio" name="R6" value="1" required>
+              <label>1</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R6" value="2">
+              <label>2</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R6" value="3">
+              <label>3</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R6" value="4">
+              <label>4</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" name="R6" value="5">
+              <label>5</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button class="submit-btn" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="./public/js/script.js"></script>
+</body>
+</html>
