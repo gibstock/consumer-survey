@@ -18,7 +18,7 @@
         method="POST"
       > 
         <div class="input-group">
-          <input type="text" name="Name" placeholder="Name">
+          <input type="text" name="Name" placeholder="Name" required>
         </div>
         <div class="input-group section">
           <input type="number" name="Q1" value="1" hidden>
@@ -105,36 +105,43 @@
         <div class="input-group section">
           <input type="number" name="Q4" value="4" hidden>
           <input type="text" name="Question4" value="Rank the following social programs on a scale of 1-5, with 1 being least important and 5 being the most important focus for a company’s social responsibility:" hidden>
+          <datalist id="ranges">
+            <option value="1" label="1"></option>
+            <option value="2" label="2"></option>
+            <option value="3" label="3"></option>
+            <option value="4" label="4"></option>
+            <option value="5" label="5"></option>
+          </datalist>
           <p>Rank the following social programs on a scale of 1-5, with 1 being least important and 5 being the most important focus for a company’s social responsibility:</p>
           <div class="input-group slider">
             <div class="slider-item">
               <div id="slider1">1</div>
               <input type="text" name="QA" value="Gender Equality: " hidden>
-              <input type="range" name="RA" value="1" required min="1" max="5" id="slider1Range">
+              <input list="ranges" type="range" name="RA" value="1" required min="1" max="5" id="slider1Range">
               <label>Gender Equality</label>
             </div>
             <div class="slider-item">
               <div id="slider2">1</div>
               <input type="text" name="QB" value="Sustainable cities and communities: " hidden>
-              <input type="range" name="RB" value="1" min="1" max="5" id="slider2Range">
+              <input list="ranges" type="range" name="RB" value="1" min="1" max="5" id="slider2Range">
               <label>Sustainable cities and communities</label>
             </div>
             <div id="slider3">1</div>
             <div class="slider-item">
               <input type="text" name="QC" value="Advocating for Mental health: " hidden>
-              <input type="range" name="RC" value="1" min="1" max="5" id="slider3Range">
+              <input list="ranges" type="range" name="RC" value="1" min="1" max="5" id="slider3Range">
               <label>Advocating for Mental health</label>
             </div>
             <div id="slider4">1</div>
             <div class="slider-item">
               <input type="text" name="QD" value="Racial Equality: " hidden>
-              <input type="range" name="RD" value="1" min="1" max="5" id="slider4Range">
+              <input list="ranges" type="range" name="RD" value="1" min="1" max="5" id="slider4Range">
               <label>Racial Equality</label>
             </div>
             <div id="slider5">1</div>
             <div class="slider-item">
               <input type="text" name="QE" value="Global Warming: " hidden>
-              <input type="range" name="RE" value="1" min="1" max="5" id="slider5Range">
+              <input list="ranges" type="range" name="RE" value="1" min="1" max="5" id="slider5Range">
               <label>Global Warming</label>
             </div>
           </div>
@@ -183,7 +190,7 @@
         </div>
 
         <div class="form-submit">
-          <button class="submit-btn" type="submit">Submit</button>
+          <button id="submitBtn" class="submit-btn" type="submit">Submit</button>
         </div>
       </form>
     </div>

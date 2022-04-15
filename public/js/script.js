@@ -1,5 +1,6 @@
 const URL = 'https://script.google.com/macros/s/AKfycbyXsCLKTe3iZsM-Ip4TF4rODNur4w4yQ0QyeCt9bCyos82bISvjdst93UwxonCvFZHF/exec'
 
+const submitBtn = document.getElementById('submitBtn')
 const slider1 = document.getElementById('slider1')
 const slider2 = document.getElementById('slider2')
 const slider3 = document.getElementById('slider3')
@@ -10,6 +11,7 @@ const slider2Range = document.getElementById('slider2Range')
 const slider3Range = document.getElementById('slider3Range')
 const slider4Range = document.getElementById('slider4Range')
 const slider5Range = document.getElementById('slider5Range')
+
 
 slider1Range.oninput = () => {
   slider1.textContent = slider1Range.value
@@ -34,6 +36,8 @@ window.addEventListener("load", function() {
     e.preventDefault();
     const data = new FormData(form);
     const action = e.target.action;
+    submitBtn.textContent = "Sending..."
+    submitBtn.disabled = true;
     fetch(action, {
       method: 'POST',
       body: data,
