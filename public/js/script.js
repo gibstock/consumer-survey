@@ -11,22 +11,57 @@ const slider2Range = document.getElementById('slider2Range')
 const slider3Range = document.getElementById('slider3Range')
 const slider4Range = document.getElementById('slider4Range')
 const slider5Range = document.getElementById('slider5Range')
+let sliderRangeValues = [slider1Range.value, slider2Range.value, slider3Range.value, slider4Range.value, slider5Range.value]
+let sliders = [slider1, slider2, slider3, slider4, slider5]
 
+const duplicateValueCheck = (sorted) => {
+  let matchCheck = false
+  for(const slider of sliders) {
+    slider.style.backgroundColor = 'green'
+  }
+  for(const [i, v] of sorted.entries()) {
+    if(sorted[i + 1] !== undefined) {
+      if(v === sorted[i + 1]) {
+        console.log(v, sorted[i + 1], "match")
+        for(const slider of sliders) {
+          if(slider.textContent === v) {
+            slider.style.backgroundColor = 'red'
+          } 
+          // else if (slider.textContent !== v) {
+          //   slider.style.backgroundColor = 'green'
+          // }
+        }
 
-slider1Range.oninput = () => {
+        matchCheck = true
+      } 
+    }
+  }
+  return matchCheck ? true : false
+}
+
+slider1Range.onchange = () => {
   slider1.textContent = slider1Range.value
+  sliderRangeValues[0] = slider1Range.value
 }
 slider2Range.oninput = () => {
   slider2.textContent = slider2Range.value
+  sliderRangeValues[1] = slider2Range.value
+  // duplicateValueCheck(sliderRangeValues)
 }
 slider3Range.oninput = () => {
   slider3.textContent = slider3Range.value
+  sliderRangeValues[2] = slider3Range.value
+  // duplicateValueCheck(sliderRangeValues)
 }
 slider4Range.oninput = () => {
   slider4.textContent = slider4Range.value
+  sliderRangeValues[3] = slider4Range.value
+  // duplicateValueCheck(sliderRangeValues)
 }
 slider5Range.oninput = () => {
   slider5.textContent = slider5Range.value
+  sliderRangeValues[4] = slider5Range.value
+  // duplicateValueCheck(sliderRangeValues)
 }
 
 console.log('working')
@@ -34,16 +69,26 @@ window.addEventListener("load", function() {
   const form = document.getElementById('my-form');
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-    const data = new FormData(form);
-    const action = e.target.action;
-    submitBtn.textContent = "Sending..."
-    submitBtn.disabled = true;
-    fetch(action, {
-      method: 'POST',
-      body: data,
+    console.log(sliderRangeValues)
+    let sorted = sliderRangeValues.sort((a,b) => {
+      return a - b
     })
-    .then(() => {
-      window.location.href = '/thanks.html';
-    })
+    if(duplicateValueCheck(sorted)){
+      alert("Please RANK the sliders on question 4 and resubmit. \n\nHint: No 2 sliders can have the same value \n\nHint 2: If your slider selection is correct, hit Submit again, it's probably just a bug...")
+    } else {
+      console.log("all good")
+      console.log(duplicateValueCheck(sorted))
+      const data = new FormData(form);
+      const action = e.target.action;
+      submitBtn.textContent = "Sending..."
+      submitBtn.disabled = true;
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+      .then(() => {
+        window.location.href = '/thanks.html';
+      })
+    }
   });
 });

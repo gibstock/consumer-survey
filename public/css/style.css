@@ -40,11 +40,12 @@ form {
   padding: 0 30px;
 }
 form .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .section {
   border: .5px solid lightblue;
   padding: .5em 1em;
+  position: relative;
 
 }
 form label {
@@ -120,6 +121,41 @@ form .radio {
   padding: 1em;
   
   transition: all 1s ease 2.5s;
+}
+.q-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1461a4;
+  color: white;
+  width: 1em;
+  height: 1em;
+  padding: 1em;
+  border-radius: 50%;
+  position: absolute;
+  top: -1em;
+  left: -1em;
+}
+.slider-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* height: 1em;
+  width: 1em;
+  padding: .5em;
+  border-radius: 50%; */
+}
+#slider1, #slider2, #slider3, #slider4, #slider5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  color: white;
+  height: 2em;
+  width: 2em;
+  margin: 0;
+  border-radius: 50%;
+  transform: translateX(-50%);
 }
 @media screen and (min-width: 1000px) {
   main {
